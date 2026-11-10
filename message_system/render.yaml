@@ -1,9 +1,7 @@
 services:
   - type: web
-    name: screenautomation-message-server
+    name: message-server
     runtime: python
+    plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn server:app
-    envVars:
-      - key: ADMIN_TOKEN
-        sync: false
+    startCommand: python server.py
